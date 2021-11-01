@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from 'react-i18next';
 import "./styles.css";
 
 const YoutubeEmbed = ({ links, loading }) => {
+  const { t } = useTranslation();
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <h2>{t('loading_message')}</h2>;
+
   }
 
   return (

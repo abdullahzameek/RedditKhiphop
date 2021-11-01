@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import YoutubeEmbed from "./components/YouTube/YouTubeEmbed";
 import Pagination from "./components/Pagination";
+import Header from './components/Header';
 import axios from "axios";
 
 function App() {
@@ -30,9 +31,7 @@ function App() {
 
   return (
     <>
-      <div class="page-header">
-        <center><h1>Daily K Hip Hop</h1></center>
-      </div>
+      <Header/>
       <YoutubeEmbed links={currentLinks} loading={loading} />
       <Pagination
         linksPerPage={linksPerPage}
