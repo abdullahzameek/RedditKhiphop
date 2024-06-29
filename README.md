@@ -2,6 +2,4 @@ I realized I kept missing new KHH releases cuz I was too lazy to check Reddit. T
 
 TODO:
 - [ ] Fix Mobile Styles
-- [ ] Add second route for K-Pop
-- [ ] Restructure App for multiple pages
 - [ ] Some Spotify integration
