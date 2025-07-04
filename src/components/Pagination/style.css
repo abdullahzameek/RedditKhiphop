@@ -3,3 +3,145 @@ body{
     background-color: black;
     color:whitesmoke;
 }
+
+/* Pagination Styles */
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0 20px 0;
+  gap: 15px;
+}
+
+.pagination-info {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-item {
+  margin: 0;
+}
+
+.page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: none;
+  outline: none;
+}
+
+.page-link:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.page-link:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.page-item.active .page-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transform: translateY(-1px);
+}
+
+.page-item.disabled .page-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.page-item.disabled .page-link:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.ellipsis {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.ellipsis:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pagination-container {
+    margin: 30px 0 15px 0;
+    gap: 12px;
+  }
+  
+  .pagination-info {
+    font-size: 13px;
+  }
+  
+  .pagination {
+    gap: 4px;
+  }
+  
+  .page-link {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-container {
+    margin: 25px 0 10px 0;
+    gap: 10px;
+  }
+  
+  .pagination-info {
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .pagination {
+    gap: 3px;
+  }
+  
+  .page-link {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  
+  /* Hide some page numbers on very small screens */
+  .page-item:not(.active):not(:first-child):not(:last-child):not(:nth-child(2)):not(:nth-last-child(2)) {
+    display: none;
+  }
+}
